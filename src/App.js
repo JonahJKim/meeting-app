@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import AllMeetupsPage from './pages/AllMeetups.js';
 import NewMeetupPage from './pages/NewMeetup.js';
 import FavoritesPage from './pages/Favorites.js';
-import MainNavigation from './components/layout/MainNavigation'
+import Layout from './components/layout/Layout.js';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from 'react-router-dom'
 
 function App() {
@@ -15,14 +14,13 @@ function App() {
   // something like my-page.com/{path} i.e. /favorites
   return (
     <Router>
-      <div>
-        <MainNavigation />
+      <Layout>
         <Routes>
             <Route path='/' element={<AllMeetupsPage />}/> 
             <Route path='/new-meetup' element={<NewMeetupPage />}/> 
             <Route path='/favorites' element={<FavoritesPage />}/> 
-          </Routes>
-      </div>  
+          </Routes>  
+          </Layout>
     </Router>
   );
 }
