@@ -1,8 +1,10 @@
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
+import { useNavigate } from 'react-router-dom'
 
 function NewMeetupPage() {
+    const navigate = useNavigate();
     function addMeetupHandler(meetupData) {
-        fetch(
+        fetch( // allows us to send HTTP requests
             'https://react-getting-started-7f5fe-default-rtdb.firebaseio.com/meetups.json',
             {
                 method: 'POST',
@@ -11,7 +13,7 @@ function NewMeetupPage() {
                     'Content-Type': 'application/json'
                 }
             }
-        ); // allows us to send HTTP requests
+        ).then(() => navigate('/', {replace: true}))
     }
 
     return <section>
