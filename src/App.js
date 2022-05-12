@@ -1,4 +1,5 @@
 import AllMeetupsPage from './pages/AllMeetups.js';
+import SignUpPage from './pages/SignupPage.js';
 import NewMeetupPage from './pages/NewMeetup.js';
 import FavoritesPage from './pages/Favorites.js';
 import Layout from './components/layout/Layout.js';
@@ -16,11 +17,12 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-            <Route path='/' element={<AllMeetupsPage />}/> 
+            <Route path='/' element={<SignUpPage />}/> 
+            <Route path='/home' element={<AllMeetupsPage />}/> 
             <Route path='/new-meetup' element={<NewMeetupPage />}/> 
             <Route path='/favorites' element={<FavoritesPage />}/> 
           </Routes>  
-          </Layout>
+        </Layout>
     </Router>
   );
 }

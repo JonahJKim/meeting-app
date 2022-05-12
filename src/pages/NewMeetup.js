@@ -13,7 +13,7 @@ function NewMeetupPage() {
                     'Content-Type': 'application/json'
                 }
             }
-        ).then(() => navigate('/', {replace: true}))
+        ).then(() => navigate('/home', {replace: true}))
     }
 
     return <section>
