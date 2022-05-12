@@ -26,7 +26,6 @@ function AllMeetupsPage() {
     });
   }, []);
 
- 
 
   if (isLoading) {
     return <section>
